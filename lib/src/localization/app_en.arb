@@ -1,0 +1,6 @@
+{
+  "appTitle": "best_practices",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
