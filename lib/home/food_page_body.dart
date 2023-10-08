@@ -1,6 +1,5 @@
- import 'package:flutter/material.dart';
- 
- 
+import 'package:flutter/material.dart';
+
 // ignore: depend_on_referenced_packages
 import 'package:dots_indicator/dots_indicator.dart';
 // ignore: depend_on_referenced_packages
@@ -23,6 +22,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   PageController pageController = PageController(viewportFraction: 0.85);
   // ignore: non_constant_identifier_names
   double Current_Page = 0.0;
+  // ignore: non_constant_identifier_names
+  double Current = 0.0;
   final int position = 0;
 
   @override
@@ -32,7 +33,6 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       () {
         setState(() {
           Current_Page = pageController.page!;
-          
         });
       },
     );
@@ -54,7 +54,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         ),
         DotsIndicator(
           dotsCount: 5,
-          position:Current_Page ,
+          position: Current_Page,
           decorator: DotsDecorator(
             activeColor: AppColors.mainColor,
             size: const Size.square(9.0),
