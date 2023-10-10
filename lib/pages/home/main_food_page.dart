@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
- 
-import '../utils/Colors.dart';
-import '../widgets/BigText.dart';
-import '../widgets/SmallText.dart';
+import '../../utils/Colors.dart';
+import '../../widgets/BigText.dart';
+import '../../widgets/SmallText.dart';
 import 'food_page_body.dart';
 
 class MainfoodPage extends StatefulWidget {

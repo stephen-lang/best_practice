@@ -1,15 +1,16 @@
+import 'package:best_practices/pages/food/popular_food_detail.dart';
 import 'package:flutter/material.dart';
 
 // ignore: depend_on_referenced_packages
 import 'package:dots_indicator/dots_indicator.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import '../utils/Colors.dart';
-import '../widgets/BigText.dart';
-import '../widgets/SmallText.dart';
-import '../widgets/icon_and_text_widget.dart';
-import '../widgets/label_info.dart';
-import '../widgets/space.dart';
+import '../../utils/Colors.dart';
+import '../../widgets/BigText.dart';
+import '../../widgets/SmallText.dart';
+import '../../widgets/icon_and_text_widget.dart';
+import '../../widgets/label_info.dart';
+import '../../widgets/space.dart';
 
 class FoodPageBody extends StatefulWidget {
   const FoodPageBody({Key? key}) : super(key: key);
@@ -22,8 +23,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   PageController pageController = PageController(viewportFraction: 0.85);
   // ignore: non_constant_identifier_names
   double Current_Page = 0.0;
-  // ignore: non_constant_identifier_names
-  double Current = 0.0;
+
   final int position = 0;
 
   @override
@@ -175,18 +175,31 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   Widget _buildPageItem(int index) {
     return Stack(
       children: [
-        Container(
-          margin: const EdgeInsets.only(
-            left: 10,
-            right: 10,
+        InkWell(
+          child: Container(
+            margin: const EdgeInsets.only(
+              left: 10,
+              right: 10,
+            ),
+            height: 180,
+            decoration: BoxDecoration(
+              color: index.isEven ? Colors.red : Colors.red,
+              image: const DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage("assets/image/food1.jpg")),
+              borderRadius: BorderRadius.circular(30),
+            ),
           ),
-          height: 180,
-          decoration: BoxDecoration(
-            color: index.isEven ? Colors.red : Colors.red,
-            image: const DecorationImage(
-                fit: BoxFit.fill, image: AssetImage("assets/image/food1.jpg")),
-            borderRadius: BorderRadius.circular(30),
-          ),
+          onTap: () => {
+            {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const PopularFoodDetail()),
+              )
+            },
+            //Navigator.of(context).pushNamed('PopularFoodDetail')},
+          },
         ),
         Container(
           padding: const EdgeInsets.only(
